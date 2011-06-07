@@ -326,7 +326,7 @@ function lm_paypal_donate($amount = '', $ccc = '', $name = '', $button_url = '',
 
   // Output a form that will redirect the user to PayPal - note all the fields
   // are hidden so only the submit appears
-  $form = "\n<form action=\"http://$_lm_paypal_host/cgi-bin/webscr\" method=\"post\">\n";
+  $form = "\n<form action=\"https://$_lm_paypal_host/cgi-bin/webscr\" method=\"post\">\n";
 
   if (isset($sa)) {
     if ($amount_label != '') {
@@ -354,7 +354,7 @@ function lm_paypal_donate($amount = '', $ccc = '', $name = '', $button_url = '',
   if ($ccc) {
     $form .= "<input type=\"hidden\" name=\"currency_code\" value=\"$ccc\">\n";
   }
-  $form .= "<input type=\"hidden\" name=\"no_note\" value=\"1\">\n";
+  $form .= "<input type=\"hidden\" name=\"no_note\" value=\"0\">\n";
   $form .= "<input type=\"hidden\" name=\"custom\" value=\"$user->uid\">\n";
   $form .= "<input type=\"image\" src=\"$button_url\" border=\"0\" name=\"submit\" alt=\"Make payments with PayPal - it's fast, free and secure!\">\n";
   if (isset($sa)) {
